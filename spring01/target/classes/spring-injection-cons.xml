@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+  <!-- 方法二：构造器注入写法  -->
+  <bean id="injectionServiceCons"
+    class="com.luyuxi.spring.service.InjectionServiceConsImpl">
+    <!-- 这里的 name必须="方法的入参名称" -->
+    <constructor-arg name="injectionServiceCons" ref="InjectionDaoImplId"></constructor-arg>
+  </bean>
+  
+  <!-- 被映射的类和Id -->
+  <bean id="InjectionDaoImplId"
+    class="com.luyuxi.spring.dao.InjectionDaoImpl">
+  </bean>
+</beans>
